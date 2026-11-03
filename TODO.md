@@ -3,5 +3,5 @@
   - [x] Añadir cliente no existente
   - [x] Mostrar lista con reservas
 - [ ] APARTADO 2:
-  - [ ] Solicitar aeropuerto origen
+  - [x] Obtener todos aeropuertos
   - [ ] Obtener vuelos que salen del aeropuerto de origen
