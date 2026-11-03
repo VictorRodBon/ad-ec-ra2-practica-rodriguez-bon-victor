@@ -2,6 +2,16 @@
   - [x] Verificar cliente existente
   - [x] Añadir cliente no existente
   - [x] Mostrar lista con reservas
-- [ ] APARTADO 2:
+- [x] APARTADO 2:
   - [x] Obtener todos aeropuertos
   - [ ] Obtener vuelos que salen del aeropuerto de origen
+    - Falta pbtener los datos de los aeropuertos
+- [ ] APARTADO 3:
+  - [ ] Listar los asientos libres para el vuelo seleccionado
+- [ ] APARTADO 4:
+  - [ ] Verificar descuentos:
+    - [ ] Descuento <12 años
+    - [ ] Descuento >3 reservas
+  - [ ] Guardar reserva en una sola transaccion
+    - [ ] Generar código único de 6 caracteres alfanuméricos en mayúsculas
+- [ ] Mejorar sentencias SQL para obtener todos los datos necesarios, no solo los de una entidad
