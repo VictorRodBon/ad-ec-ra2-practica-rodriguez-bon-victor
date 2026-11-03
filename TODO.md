@@ -1,7 +1,7 @@
-- [ ] APARTADO 1:
+- [x] APARTADO 1:
   - [x] Verificar cliente existente
   - [x] Añadir cliente no existente
-  - [ ] Mostrar lista con reservas
+  - [x] Mostrar lista con reservas
 - [ ] APARTADO 2:
   - [ ] Solicitar aeropuerto origen
   - [ ] Obtener vuelos que salen del aeropuerto de origen
