@@ -16,5 +16,6 @@ public class ClienteService {
     }
 
     public void saveCliente(ClienteEntity cliente) throws SQLException {
+        clienteDao.saveCliente(cliente);
     }
 }
