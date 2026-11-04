@@ -4,7 +4,7 @@
   - [x] Mostrar lista con reservas
 - [x] APARTADO 2:
   - [x] Obtener todos aeropuertos
-  - [ ] Obtener vuelos que salen del aeropuerto de origen
+  - [x] Obtener vuelos que salen del aeropuerto de origen
     - Falta pbtener los datos de los aeropuertos
 - [ ] APARTADO 3:
   - [ ] Listar los asientos libres para el vuelo seleccionado

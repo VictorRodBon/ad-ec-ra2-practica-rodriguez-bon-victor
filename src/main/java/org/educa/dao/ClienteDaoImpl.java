@@ -55,7 +55,6 @@ public class ClienteDaoImpl implements ClienteDao{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            // Opcional: registrar el error con un logger (ej. logger.error("Error al insertar cliente", e);)
             throw new RuntimeException("Error al insertar el cliente en la base de datos", e);
         }
     }
