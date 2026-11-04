@@ -22,7 +22,7 @@ Una vez se elija el aeropuerto, se mostrarán los vuelos que salen de él y que 
 2. IB3450 MAD -> CDG (París) | Salida: 15/10/2026 11:00 | Llegada: 15/10/2026 13:10 (97.50€)
 3. IB3620 MAD -> FCO (Roma) | Salida: 16/10/2026 15:30 | Llegada: 16/10/2026 18:05 (116.25€)
 
-El precio base del vuelo se calcula según su dureción:
+El precio base del vuelo se calcula según su duración:
 - 0.75€ por cada minuto de vuelo (tiempo transcurrido entre la fecha de salida y la de llegada).
 
 ## Apartado 3 (2 puntos)
