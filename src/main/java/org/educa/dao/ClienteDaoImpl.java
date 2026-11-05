@@ -41,7 +41,7 @@ public class ClienteDaoImpl implements ClienteDao{
     public void saveCliente(ClienteEntity cliente) {
         String sql = "INSERT INTO clientes " +
                 "(dni, nombre, p_apellido, s_apellido, email, telefono) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?, ?) RETURNING id_cliente";
         try (Connection connection = ConnectionPool.getDataSource().getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
@@ -52,7 +52,13 @@ public class ClienteDaoImpl implements ClienteDao{
             ps.setString(5, cliente.getEmail());
             ps.setString(6, cliente.getTelefono());
 
-            ps.executeUpdate();
+            try(ResultSet rs = ps.executeQuery()){
+                if(rs.next()){
+                    cliente.setIdCliente(rs.getInt(1));
+                }else{
+                    throw new SQLException("No se ha podido insertar el usuario" );
+                }
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException("Error al insertar el cliente en la base de datos", e);

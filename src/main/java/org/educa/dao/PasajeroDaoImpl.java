@@ -1,0 +1,33 @@
+package org.educa.dao;
+
+import org.educa.entity.PasajeroEntity;
+
+import java.sql.*;
+
+public class PasajeroDaoImpl implements PasajeroDao{
+    @Override
+    public void insertar(Connection c, PasajeroEntity pasajero) throws SQLException {
+        String sql = "INSERT INTO pasajeros (id_reserva, dni, nombre, p_apellido, s_apellido, email, telefono, fec_nac)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING id_pasajero";
+
+        try (PreparedStatement ps = c.prepareStatement(sql)){
+            ps.setInt(1, pasajero.getIdReserva());
+            ps.setString(2, pasajero.getDni());
+            ps.setString(3, pasajero.getNombre());
+            ps.setString(4, pasajero.getPrimerApellido());
+            ps.setString(5, pasajero.getSegundoApellido());
+            ps.setString(6, pasajero.getEmail());
+            ps.setString(7, pasajero.getTelefono());
+            ps.setDate(8, Date.valueOf(pasajero.getFecNac()));
+
+            try (ResultSet rs = ps.executeQuery()){
+                if(rs.next()){
+                    int id = rs.getInt(1);
+                    pasajero.setIdPasajero(id);
+                }else{
+                    throw new SQLException("No se ha podido obtener el id del pasajero insertado");
+                }
+            }
+        }
+    }
+}

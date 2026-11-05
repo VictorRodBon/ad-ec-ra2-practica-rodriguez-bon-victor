@@ -27,24 +27,29 @@ public class AsientoDaoImpl implements AsientoDao{
              PreparedStatement ps = connection.prepareStatement(sql)
         ) {
             ps.setString(1, vuelo.getNumVuelo());
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                asientos.add(
-                        new AsientoEntity(
-                                rs.getInt(1),
-                                rs.getInt(2),
-                                rs.getString(3),
-                                rs.getString(4),
-                                getSuplemento(rs.getString(4))
-                        )
-                );
+
+            try(ResultSet rs = ps.executeQuery()){
+
+                while(rs.next()){
+                    asientos.add(
+                            new AsientoEntity(
+                                    rs.getInt(1),
+                                    rs.getInt(2),
+                                    rs.getString(3),
+                                    rs.getString(4),
+                                    getSuplemento(rs.getString(4))
+                            )
+                    );
+                }
+            }catch (SQLException e){
+                throw e;
             }
         }
         return asientos;
     }
 
     private BigDecimal getSuplemento(String clase){
-        BigDecimal suplemento=null;
+        BigDecimal suplemento;
         switch (clase){
             case "TURISTA":
                 suplemento=new BigDecimal("0");

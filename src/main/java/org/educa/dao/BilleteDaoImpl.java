@@ -1,0 +1,24 @@
+package org.educa.dao;
+
+import org.educa.entity.BilleteEntity;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class BilleteDaoImpl implements BilleteDao{
+    @Override
+    public void insertar(Connection c, BilleteEntity billete) throws SQLException {
+        String sql = "INSERT INTO billetes (id_pasajero, id_vuelo, id_asiento, precio) VALUES (?, ?, ?, ?)";
+
+        try(PreparedStatement ps = c.prepareStatement(sql)){
+            ps.setInt(1, billete.getPasajero().getIdPasajero());
+            ps.setInt(2, billete.getVuelo().getIdVuelo());
+            ps.setInt(3, billete.getAsiento().getIdAsiento());
+            ps.setBigDecimal(4, billete.getPrecio());
+
+            ps.executeUpdate();
+        }
+    }
+}

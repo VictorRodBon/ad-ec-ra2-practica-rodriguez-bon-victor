@@ -5,13 +5,13 @@
 - [x] APARTADO 2:
   - [x] Obtener todos aeropuertos
   - [x] Obtener vuelos que salen del aeropuerto de origen
-    - Falta pbtener los datos de los aeropuertos
-- [ ] APARTADO 3:
-  - [ ] Listar los asientos libres para el vuelo seleccionado
-- [ ] APARTADO 4:
-  - [ ] Verificar descuentos:
-    - [ ] Descuento <12 años
-    - [ ] Descuento >3 reservas
-  - [ ] Guardar reserva en una sola transaccion
-    - [ ] Generar código único de 6 caracteres alfanuméricos en mayúsculas
-- [ ] Mejorar sentencias SQL para obtener todos los datos necesarios, no solo los de una entidad
+    - [x] Falta pbtener los datos de los aeropuertos
+- [x] APARTADO 3:
+  - [x] Listar los asientos libres para el vuelo seleccionado
+- [x] APARTADO 4:
+  - [x] Verificar descuentos:
+    - [x] Descuento <12 años
+    - [x] Descuento >3 reservas
+  - [x] Guardar reserva en una sola transaccion
+    - [x] Generar código único de 6 caracteres alfanuméricos en mayúsculas
+- [x] Mejorar sentencias SQL para obtener todos los datos necesarios, no solo los de una entidad
