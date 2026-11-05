@@ -41,8 +41,6 @@ public class AsientoDaoImpl implements AsientoDao{
                             )
                     );
                 }
-            }catch (SQLException e){
-                throw e;
             }
         }
         return asientos;

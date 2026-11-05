@@ -5,7 +5,7 @@
 - [x] APARTADO 2:
   - [x] Obtener todos aeropuertos
   - [x] Obtener vuelos que salen del aeropuerto de origen
-    - [x] Falta pbtener los datos de los aeropuertos
+    - [x] Obtener los datos de los aeropuertos
 - [x] APARTADO 3:
   - [x] Listar los asientos libres para el vuelo seleccionado
 - [x] APARTADO 4:

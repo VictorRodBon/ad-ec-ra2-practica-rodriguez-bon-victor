@@ -12,9 +12,9 @@ public final class ReservaUtils {
     }
 
     /**
-     * Genera un código de reserva aleatorio de 6 caracteres alfanuméricos en mayúsculas
+     * Genera un código de reserva aleatorio de 6 caracteres alfanuméricos en mayúsculas.
      *
-     * @return el código generado
+     * @return código de reserva generado.
      */
     public static String generarCodigoReserva() {
         StringBuilder codigo = new StringBuilder(LONGITUD_CODIGO);

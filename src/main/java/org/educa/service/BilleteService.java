@@ -16,6 +16,21 @@ public class BilleteService {
     private static final BilleteDao dao = new BilleteDaoImpl();
     private static final VueloService vueloService = new VueloService();
 
+    /**
+     * Calcula y asigna el precio final de un billete.
+     * <p>
+     * Parte del precio base del vuelo (0,75 € por minuto), le suma el suplemento
+     * del asiento y aplica, en este orden:
+     * <ul>
+     *   <li>descuento infantil del 20 % si el pasajero tiene menos de 12 años
+     *       en la fecha de salida del vuelo;</li>
+     *   <li>descuento del 10 % si el cliente tiene más de tres reservas previas.</li>
+     * </ul>
+     * El precio final se redondea a dos decimales.
+     *
+     * @param billete     {@link BilleteEntity} al que se asigna el precio.
+     * @param numReservas cantidad de reservas previas del cliente.
+     */
     public void calculatePrecio(BilleteEntity billete, int numReservas) {
         // llamar a calcular precio
 
@@ -39,7 +54,13 @@ public class BilleteService {
     }
 
 
-
+    /**
+     * Almacena un {@link BilleteEntity} en la base de datos.
+     *
+     * @param connection conexión con la base de datos.
+     * @param billete {@link BilleteEntity} a guardar en la base de datos.
+     * @throws SQLException si falla la inserción en la base de datos.
+     */
     public void save(Connection connection, BilleteEntity billete) throws SQLException {
         dao.insertar(connection, billete);
     }
