@@ -14,7 +14,6 @@ import java.time.temporal.ChronoUnit;
 public class BilleteService {
 
     private static final BilleteDao dao = new BilleteDaoImpl();
-    private static final VueloService vueloService = new VueloService();
 
     /**
      * Calcula y asigna el precio final de un billete.
@@ -32,6 +31,8 @@ public class BilleteService {
      * @param numReservas cantidad de reservas previas del cliente.
      */
     public void calculatePrecio(BilleteEntity billete, int numReservas) {
+        VueloService vueloService = new VueloService();
+
         // llamar a calcular precio
 
         BigDecimal precioFinal =vueloService.getPrecioBase(billete.getVuelo());

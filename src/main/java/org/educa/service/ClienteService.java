@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ClienteService {
 
-    ClienteDao clienteDao = new ClienteDaoImpl();
+    private static final ClienteDao clienteDao = new ClienteDaoImpl();
 
     /**
      * Busca un cliente en la base de datos mediante su DNI.

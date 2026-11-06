@@ -15,9 +15,8 @@ import java.util.List;
 
 public class ReservaService {
 
-    private static  final ReservasDao dao = new ReservasDaoImpl();
-    private static final PasajeroService pasajeroService = new PasajeroService();
-    private static final BilleteService billeteService = new BilleteService();
+    private static final ReservasDao dao = new ReservasDaoImpl();
+
 
     /**
      * Obtiene las reservas almacenadas en la base de datos de un {@link ClienteEntity}.
@@ -43,6 +42,9 @@ public class ReservaService {
      * @throws SQLException si falla cualquier operación contra la base de datos.
      */
     public void save(ReservaEntity reserva) throws SQLException {
+        PasajeroService pasajeroService = new PasajeroService();
+        BilleteService billeteService = new BilleteService();
+
         try(Connection c = ConnectionPool.getDataSource().getConnection()){
             c.setAutoCommit(false);
 
